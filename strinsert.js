@@ -1,6 +1,6 @@
 /**
  * @license Copyright © 2013 Stuart Sillitoe <stuart@vericode.co.uk>
- * This open open source, can modify it as you wish.
+ * This is open source, can modify it as you wish.
  *
  * Stuart Sillitoe
  * stuartsillitoe.co.uk
