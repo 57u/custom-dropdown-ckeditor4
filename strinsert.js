@@ -12,12 +12,15 @@ CKEDITOR.plugins.add('strinsert',
   requires : ['richcombo'],
 	init : function( editor )
 	{
-		//  array of strings to choose from that'll be inserted into the editor
-		var strings = [];
-		strings.push(['@@FAQ::displayList()@@', 'FAQs', 'FAQs']);
-		strings.push(['@@Glossary::displayList()@@', 'Glossary', 'Glossary']);
-		strings.push(['@@CareerCourse::displayList()@@', 'Career Courses', 'Career Courses']);
-		strings.push(['@@CareerProfile::displayList()@@', 'Career Profiles', 'Career Profiles']);
+		// Array of strings to choose from that'll be inserted into the editor
+		// Format is [group name, item content (inserted string), item description[, optional voice label]]
+		//If no voice label is supplied, the description is used
+		var strings = [
+			['Group 1', 'content_1', 'Item 1', 'Optional label'],
+			['Group 1', 'content_2', 'Item 2'],
+			['Group 2', 'content_3', 'Item 3'],
+			['Group 2', 'content_4', 'Item 4']
+		];
 
 		// add the menu to the editor
 		editor.ui.addRichCombo('strinsert',
@@ -35,10 +38,19 @@ CKEDITOR.plugins.add('strinsert',
 
 			init: function()
 			{
-				this.startGroup( "Insert Content" );
-				for (var i in strings)
+				var lastgroup = '';
+				for(var i=0, len=strings.length; i < len; i++)
 				{
-					this.add(strings[i][0], strings[i][1], strings[i][2]);
+					if (strings[i][0] != lastgroup) {
+						this.startGroup( strings[i][0] );
+						lastgroup = strings[i][0];
+					}
+					if (strings[i].length == 3) {
+						//Use description as voice label too
+						this.add(strings[i][1], strings[i][2], strings[i][2]);
+					} else if (strings[i].length == 4) {
+						this.add(strings[i][1], strings[i][2], strings[i][3]);
+					}
 				}
 			},
 
