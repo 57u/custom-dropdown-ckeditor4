@@ -59,3 +59,19 @@ If the value key is *not* defined and the name key is, then a group header with 
 ###Additional configuration
 
 You can additionally set name shown for the dropdown button with **config.strinsert_button_label** ('Insert' by default) and the title/tooltip text with  **config.strinsert_button_title** and the voice label text **config.strinsert_button_voice** (both 'Insert content' by default).
+
+Put all together the strinsert section of your config.js file might look like this:
+
+```
+CKEDITOR.editorConfig = function( config ) {
+    // ...
+    config.extraPlugins = 'strinsert';
+    config.strinsert_strings = [
+        {'value': '*|FIRSTNAME|*', 'name': 'First name'},
+        {'value': '*|LASTNAME|*', 'name': 'Last name'},
+        {'value': '*|INVITEURL|*', 'name': 'Activore invite URL'},
+    ];
+    config.strinsert_button_label = 'Tokens';
+    config.strinsert_button_title = config.strinsert_button_voice = 'Insert token';
+};
+```
