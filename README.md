@@ -3,7 +3,7 @@ StrInsert (String Insert)
 
 Dropdown for CKEditor to insert custom strings.
 
-Allows you to create a custom dropdown added to the ckeditor4 toolbar, which outputs a text string (or whatever needed) to the editor.
+Allows you to create a custom dropdown added to the ckeditor4 toolbar, which outputs a text string (or whatever needed) to the editor.  This is useful for making it easy for people to use tokens or merge tags in the documents they edit.
 
 Original repository name custom-dropdown-ckeditor4.
 
