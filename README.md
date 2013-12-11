@@ -14,6 +14,8 @@ By Stuart (57u) and improved by Marcus Bointon (Synchro).
 
 ##Installation
 
+1. Place the strinsert folder in the ckeditor/plugins/ directory.
+2. Edit your config.js file so as to add strinsert to the [extraPlugins configuration](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-extraPlugins)
 ```
 CKEDITOR.editorConfig = function( config ) {
 
