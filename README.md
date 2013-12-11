@@ -7,7 +7,7 @@ Allows you to create a custom dropdown added to the ckeditor4 toolbar, which out
 
 Original repository name custom-dropdown-ckeditor4.
 
-By Stuart (57u) and improved by Marcus Bointon (Synchro).
+By Stuart Sillitoe (57u) and Marcus Bointon (Synchro).
 
  * https://github.com/57u/custom-dropdown-ckeditor4
  * https://github.com/Synchro/custom-dropdown-ckeditor4
