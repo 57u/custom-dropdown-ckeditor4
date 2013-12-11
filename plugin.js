@@ -12,14 +12,12 @@ CKEDITOR.plugins.add('strinsert',
 	requires : ['richcombo'],
 	init : function( editor )
 	{
-		// Array of strings to choose from that'll be inserted into the editor
+		// Array of strings to choose from that will be inserted into the editor
 		// Format is [group name, item content (inserted string), item description[, optional voice label]]
-		//If no voice label is supplied, the description is used
+		// If no voice label is supplied, the description is used
 		var strings = [
-			['Group 1', 'content_1', 'Item 1', 'Optional label'],
-			['Group 1', 'content_2', 'Item 2'],
-			['Group 2', 'content_3', 'Item 3'],
-			['Group 2', 'content_4', 'Item 4']
+			{'name': 'Name', 'value': '*|VALUE|*'},
+			{'name': 'Another name', 'value': 'totally_different', 'label': 'Good looking'},
 		];
 
 		// add the menu to the editor
@@ -41,15 +39,22 @@ CKEDITOR.plugins.add('strinsert',
 				var lastgroup = '';
 				for(var i=0, len=strings.length; i < len; i++)
 				{
-					if (strings[i][0] != lastgroup) {
-						this.startGroup( strings[i][0] );
-						lastgroup = strings[i][0];
+					string = strings[i];
+					// If there is no value, make a group header using the name.
+					if (!string.value) {
+						this.startGroup( string.name );
 					}
-					if (strings[i].length == 3) {
-						//Use description as voice label too
-						this.add(strings[i][1], strings[i][2], strings[i][2]);
-					} else if (strings[i].length == 4) {
-						this.add(strings[i][1], strings[i][2], strings[i][3]);
+					// If we have a value, we have a string insert row.
+					else {
+						// If no name provided, use the value for the name.
+						if (!string.name) {
+							string.name = string.value;
+						}
+						// If no label provided, use the name for the label.
+						if (!string.label) {
+							string.label = string.name;
+						}
+						this.add(string.value, string.name, string.label);
 					}
 				}
 			},
