@@ -16,25 +16,15 @@ By Stuart (57u) and improved by Marcus Bointon (Synchro).
 
 ```
 CKEDITOR.editorConfig = function( config ) {
-	// The toolbar groups arrangement, optimized for two toolbar rows.
-	config.toolbarGroups = [
-		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
-		{ name: 'links' },
-		'/',
-		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
-		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align' ] },
-		{ name: 'styles' },
 
-    // Add strinsert plugin
-		{ name: 'strinsert' }
+    // ...
 
-	];
-
-  // Register the strinsert plugin
+    // Register the strinsert plugin
 	config.extraPlugins = 'strinsert';
+	
+	config.strInsert = 
 
 };
 ```
 
-StrInsert is added to the 'insert' toolbar group by default, but you can change this in your [toolbarGroups configuration](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups).  For more information, see also the [toolbar sample](http://ckeditor.com/latest/samples/plugins/toolbar/toolbar.html).
+StrInsert is added to the 'insert' toolbar group by default, but you can change this in your [toolbarGroups configuration](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups).  For more information, see also the [developer guide for toolbars](http://docs.ckeditor.com/#!/guide/dev_toolbar) and the [toolbar sample](http://ckeditor.com/latest/samples/plugins/toolbar/toolbar.html).
