@@ -55,3 +55,7 @@ Each insertable string dict is defined by three possible keys:
 Only the value to insert is required to define an insertable string, the value will be used as the name (and the name as the label) if other keys are not provided.
 
 If the value key is *not* defined and the name key is, then a group header with the given name will be provided in the dropdown box.  This heading is not clickable and does not insert, it is for organizational purposes only.
+
+###Additional configuration
+
+You can additionally set name shown for the dropdown button with **config.strinsert_button_label** ('Insert' by default) and the title/tooltip text with  **config.strinsert_button_title** and the voice label text **config.strinsert_button_voice** (both 'Insert content' by default).
