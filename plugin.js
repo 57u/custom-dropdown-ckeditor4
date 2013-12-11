@@ -29,6 +29,20 @@ CKEDITOR.config.strinsert_strings =	 [
 			{'name': 'Another name', 'value': 'totally_different', 'label': 'Good looking'},
 		];
 
+/**
+ * String to use as the button label.
+ */
+CKEDITOR.config.strinsert_button_label = 'Insert';
+
+/**
+ * String to use as the button title.
+ */
+CKEDITOR.config.strinsert_button_title = 'Insert content';
+
+/**
+ * String to use as the button voice label.
+ */
+CKEDITOR.config.strinsert_button_voice = 'Insert content';
 
 CKEDITOR.plugins.add('strinsert',
 {
@@ -43,9 +57,9 @@ CKEDITOR.plugins.add('strinsert',
 		// add the menu to the editor
 		editor.ui.addRichCombo('strinsert',
 		{
-			label: 		'Insert Content',
-			title: 		'Insert Content',
-			voiceLabel: 'Insert Content',
+			label: 		config.strinsert_button_label,
+			title: 		config.strinsert_button_title,
+			voiceLabel: config.strinsert_button_voice,
 			toolbar: 'insert',
 			className: 	'cke_format',
 			multiSelect:false,
