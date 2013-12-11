@@ -7,19 +7,38 @@
  *
  */
 
+/**
+ * List of dicts which define strings to choose from to insert into the editor.
+ *
+ * Each insertable string dict is defined by three possible keys:
+ *    'value': The value to insert.
+ *    'name': The name for the string to use in the dropdown.
+ *    'label': The voice label (also used as the tooltip title) for the string.
+ *
+ * Only the value to insert is required to define an insertable string, the
+ * value will be used as the name (and the name as the label) if other keys are
+ * not provided.
+ *
+ * If the value key is *not* defined and the name key is, then a group header
+ * with the given name will be provided in the dropdown box.  This heading is
+ * not clickable and does not insert, it is for organizational purposes only.
+ */
+CKEDITOR.config.strinsert_strings =	 [
+			{'name': 'Name', 'value': '*|VALUE|*'},
+			{'name': 'Group 1'},
+			{'name': 'Another name', 'value': 'totally_different', 'label': 'Good looking'},
+		];
+
+
 CKEDITOR.plugins.add('strinsert',
 {
 	requires : ['richcombo'],
 	init : function( editor )
 	{
-		// Array of strings to choose from that will be inserted into the editor
-		// Format is [group name, item content (inserted string), item description[, optional voice label]]
-		// If no voice label is supplied, the description is used
-		var strings = [
-			{'name': 'Name', 'value': '*|VALUE|*'},
-			{'name': 'Group 1'},
-			{'name': 'Another name', 'value': 'totally_different', 'label': 'Good looking'},
-		];
+		var config = editor.config;
+
+		// Gets the list of insertable strings from the settings.
+		var strings = config.strinsert_strings;
 
 		// add the menu to the editor
 		editor.ui.addRichCombo('strinsert',
@@ -67,7 +86,8 @@ CKEDITOR.plugins.add('strinsert',
 				editor.fire( 'saveSnapshot' );
 				editor.insertHtml(value);
 				editor.fire( 'saveSnapshot' );
-			}
+			},
+
 		});
 	}
 });
