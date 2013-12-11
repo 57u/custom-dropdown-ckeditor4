@@ -36,3 +36,5 @@ CKEDITOR.editorConfig = function( config ) {
 
 };
 ```
+
+StrInsert is added to the 'insert' toolbar group by default, but you can change this in your [toolbarGroups configuration](http://docs.ckeditor.com/#!/api/CKEDITOR.config-cfg-toolbarGroups).  For more information, see also the [toolbar sample](http://ckeditor.com/latest/samples/plugins/toolbar/toolbar.html).

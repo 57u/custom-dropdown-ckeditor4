@@ -27,6 +27,7 @@ CKEDITOR.plugins.add('strinsert',
 			label: 		'Insert Content',
 			title: 		'Insert Content',
 			voiceLabel: 'Insert Content',
+			toolbar: 'insert',
 			className: 	'cke_format',
 			multiSelect:false,
 			panel:
