@@ -14,6 +14,7 @@ By Stuart (57u) and improved by Marcus Bointon (Synchro).
 
 ##Installation
 
+```
 CKEDITOR.editorConfig = function( config ) {
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
@@ -34,3 +35,4 @@ CKEDITOR.editorConfig = function( config ) {
 	config.extraPlugins = 'strinsert';
 
 };
+```
