@@ -17,6 +17,7 @@ CKEDITOR.plugins.add('strinsert',
 		// If no voice label is supplied, the description is used
 		var strings = [
 			{'name': 'Name', 'value': '*|VALUE|*'},
+			{'name': 'Group 1'},
 			{'name': 'Another name', 'value': 'totally_different', 'label': 'Good looking'},
 		];
 
