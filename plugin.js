@@ -9,7 +9,7 @@
 
 CKEDITOR.plugins.add('strinsert',
 {
-  requires : ['richcombo'],
+	requires : ['richcombo'],
 	init : function( editor )
 	{
 		// Array of strings to choose from that'll be inserted into the editor
