@@ -23,7 +23,6 @@ CKEDITOR.editorConfig = function( config ) {
 
     // Register the strinsert plugin
 	config.extraPlugins = 'strinsert';
-
 };
 ```
 
